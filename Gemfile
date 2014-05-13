@@ -15,7 +15,9 @@ gem 'mysql2'
 gem 'pundit'
 gem 'sendgrid'
 gem 'simple_form'
+
 group :development do
+  gem 'rails_apps_testing'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'capistrano', '~> 3.0.1'
@@ -33,10 +35,12 @@ group :development do
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
 end
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails', '>= 3.0.0.beta2'
 end
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
