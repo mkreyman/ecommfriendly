@@ -12,7 +12,7 @@
 require 'securerandom'
 
 def secure_token
-  return ENV["SECRET_KEY_BASE"] if Rails.env.production?
+  return Rails.application.secrets.secret_key_base if Rails.env.production?
   token_file = Rails.root.join('.secret')
   if File.exist?(token_file)
     # Use the existing token.
