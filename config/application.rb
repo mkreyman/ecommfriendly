@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+@redis_url = 'redis://localhost:6379/0/cache'
+
 module Ecommfriendly
   class Application < Rails::Application
 
@@ -26,10 +28,16 @@ module Ecommfriendly
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    # config.time_zone = 'Central Time (US & Canada)'
+    config.time_zone = 'Mountain Time (US & Canada)'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    # Redis configuration
+    # http://redis-store.org/redis-rails/
+    config.cache_store = :redis_store, @redis_url
+
+    config.autoload_paths += %W(#{config.root}/app/workers)
   end
 end

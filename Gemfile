@@ -15,6 +15,20 @@ gem 'mysql2'
 gem 'pundit'
 gem 'sendgrid'
 gem 'simple_form'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'psych'
+gem 'redis'
+gem 'redis-rails'
+gem "resque", require: "resque/server"
+gem 'resque-scheduler', :require => 'resque_scheduler/server'
+gem 'rack-cache'
+gem 'will_paginate', '~> 3.0.5'
+gem 'bootstrap-will_paginate'
+gem 'twitter-bootstrap-rails'
+gem 'paperclip'
+gem 'geocoder'
 
 group :development do
   gem 'rails_apps_testing'
@@ -39,6 +53,7 @@ end
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails', '>= 3.0.0.beta2'
+  gem 'byebug'
 end
 
 group :test do
@@ -47,4 +62,7 @@ group :test do
   gem 'faker'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'vcr'
+  gem 'webmock'
+  gem "shoulda-matchers"
 end

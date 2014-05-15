@@ -13,6 +13,13 @@ Rails.application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
+  config.cache_store = :redis_store, 'redis://localhost:6379/0/cache'
+
+  # Redis configuration
+  # http://redis-store.org/redis-rails/
+  config.action_dispatch.rack_cache = true
+  config.action_dispatch.rack_cache = :redis_store, 'redis://localhost:6379/0'
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
@@ -28,7 +35,7 @@ Rails.application.configure do
   config.assets.debug = true
 
   config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
+    address: "smtp.sendgrid.net",
     port: 587,
     domain: Rails.application.secrets.domain_name,
     authentication: "plain",
@@ -37,7 +44,7 @@ Rails.application.configure do
     password: Rails.application.secrets.email_provider_password
   }
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'ecommercefriendly.net:3000' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
   # Send email in development mode?
