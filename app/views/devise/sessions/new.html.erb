@@ -2,11 +2,12 @@
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
       <h3>Sign in with...</h3>
       <%= devise_error_messages! %>
-      <p>
-      <%= link_to "Google", user_omniauth_authorize_path(:google_oauth2) %>
-      <%= link_to "Facebook", user_omniauth_authorize_path(:facebook) %>
-      <%= link_to "GitHub", user_omniauth_authorize_path(:github) %>
-      </p>
+      <div class="auth_providers">
+        <%= link_to image_tag('google_64.png', size: '64x64'), user_omniauth_authorize_path(:google_oauth2) %>
+        <%= link_to image_tag('facebook_64.png', size: '64x64'), user_omniauth_authorize_path(:facebook) %>
+        <%= link_to image_tag('github_64.png', size: '64x64'), user_omniauth_authorize_path(:github) %>
+      </div>
+      <br>
       <p>Don't use these services? Sign in below.</p>
       <br>
       <div class="form-group">
