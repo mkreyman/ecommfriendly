@@ -79,3 +79,7 @@ section {
   @extend .btn-primary;
   @extend .btn-xs;
 }
+
+.auth_providers img {
+  display: inline-block;
+}

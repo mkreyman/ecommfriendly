@@ -1,18 +1,14 @@
 <div class="authform">
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f| %>
       <h3>Sign up with...</h3>
-      <% unless @user.provider %>
-          <p>
-            <%= link_to "Google", user_omniauth_authorize_path(:google_oauth2) %>
-            <%= link_to "Facebook", user_omniauth_authorize_path(:facebook) %>
-            <%= link_to "GitHub", user_omniauth_authorize_path(:github) %>
-          </p>
-          <p>Don't use these services? Sign up below.</p>
-          <br>
-      <% else %>
-          <h3>Verify Details and Signup</h3>
-      <% end %>
       <%= devise_error_messages! %>
+      <div class="auth_providers">
+        <%= link_to image_tag('google_64.png', size: '64x64'), user_omniauth_authorize_path(:google_oauth2) %>
+        <%= link_to image_tag('facebook_64.png', size: '64x64'), user_omniauth_authorize_path(:facebook) %>
+        <%= link_to image_tag('github_64.png', size: '64x64'), user_omniauth_authorize_path(:github) %>
+      </div>
+      <br>
+      <p>Don't use these services? Sign up below.</p>
       <div class="form-group">
         <%= f.label :name %>
         <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
