@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'devise-async'
 gem 'mysql2'
 gem 'pundit'
 gem 'sendgrid'
@@ -29,6 +30,7 @@ gem 'bootstrap-will_paginate'
 gem 'twitter-bootstrap-rails'
 gem 'paperclip'
 gem 'geocoder'
+gem 'foreman'
 
 group :development do
   gem 'rails_apps_testing'
@@ -39,7 +41,6 @@ group :development do
   gem 'capistrano-rails', '~> 1.1.0'
   gem 'capistrano-rails-console'
   gem 'capistrano-rvm', '~> 0.1.1'
-  gem 'foreman'
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'

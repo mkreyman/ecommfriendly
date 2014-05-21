@@ -4,4 +4,9 @@ Ecommfriendly::Application.routes.draw do
                                       omniauth_callbacks: "omniauth_callbacks"}
   resources :users
 
+  authenticated :user, lambda {|u| u.role == 'admin' } do
+    mount Resque::Server.new, :at => "/resque"
+  end
+  get '/resque', to: "home#index"
+
 end
