@@ -31,6 +31,8 @@ gem 'twitter-bootstrap-rails'
 gem 'paperclip'
 gem 'geocoder'
 gem 'foreman'
+gem 'pg'
+gem 'rails_12factor'
 
 group :development do
   gem 'rails_apps_testing'
