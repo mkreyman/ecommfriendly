@@ -33,6 +33,8 @@ gem 'geocoder'
 gem 'foreman'
 gem 'pg'
 gem 'aws-sdk'
+gem 'stripe', '>= 1.10.1'
+gem 'httparty'
 
 gem 'rails_12factor', group: :production
 
@@ -70,4 +72,5 @@ group :test do
   gem 'vcr'
   gem 'webmock'
   gem "shoulda-matchers"
+  gem 'stripe-ruby-mock', '~> 1.10.1.7'
 end
