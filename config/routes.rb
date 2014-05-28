@@ -1,4 +1,8 @@
 Ecommfriendly::Application.routes.draw do
+  resources :sales
+
+  resources :products
+
   root :to => "home#index"
   devise_for :users, :controllers => {registrations: "registrations",
                                       omniauth_callbacks: "omniauth_callbacks"}

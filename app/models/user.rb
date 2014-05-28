@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   after_initialize :set_default_role, :if => :new_record?
   has_many :identities
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
+  has_many :products
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
 

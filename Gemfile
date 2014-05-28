@@ -28,11 +28,12 @@ gem 'rack-cache'
 gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-will_paginate'
 gem 'twitter-bootstrap-rails'
-gem 'paperclip'
+gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'geocoder'
 gem 'foreman'
 gem 'pg'
-gem 'rails_12factor'
+
+gem 'rails_12factor', group: :production
 
 group :development do
   gem 'rails_apps_testing'
