@@ -32,6 +32,7 @@ gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'geocoder'
 gem 'foreman'
 gem 'pg'
+gem 'aws-sdk'
 
 gem 'rails_12factor', group: :production
 
