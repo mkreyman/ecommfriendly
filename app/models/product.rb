@@ -5,5 +5,15 @@ class Product < ActiveRecord::Base
 
   validates_numericality_of :price,
                             greater_than: 49,
-                            message: "must be at least 50 cents"
+                            message: 'must be at least 50 cents'
+
+  validates_attachment :file,
+                       content_type: {
+                           content_type: ['image/jpg',
+                                          'image/jpeg',
+                                          'image/png',
+                                          'image/gif',
+                                          'application/pdf',
+                                          'text/csv'] }
+
 end

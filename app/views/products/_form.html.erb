@@ -6,8 +6,9 @@
     <%= f.input :permalink %>
     <%= f.input :description %>
     <%= f.input :price %>
+    <%= f.label "File" %><br />
     <%= f.file_field :file %>
-    <%= f.association :user %>
+    <%= f.hidden_field :user, value: current_user.id %>
   </div>
 
   <div class="form-actions">
